@@ -1,7 +1,9 @@
 package com.industria.testeiniflex;
 
 import java.math.BigDecimal;
+import java.text.DecimalFormat;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 public class Funcionario extends Pessoa {
 
@@ -46,5 +48,11 @@ public class Funcionario extends Pessoa {
 
   public void setFuncao(String funcao) {
     this.funcao = funcao;
+  }
+
+  public String toString() {
+    return "Nome: " + this.getNome() + ", Data Nascimento: "
+        + this.getDataNascimento().format(DateTimeFormatter.ofPattern("dd/mm/YYYY")) + ", Salário: "
+        + new DecimalFormat("#.###,00").format(this.getSalario()) + ", Função: " + this.getFuncao();
   }
 }
