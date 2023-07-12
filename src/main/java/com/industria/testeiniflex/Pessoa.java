@@ -9,6 +9,11 @@ public class Pessoa {
   private LocalDate dataNascimento;
 
   /**
+   * Construtor padrão.
+   */
+  public Pessoa() {}
+
+  /**
    * Construtor com argumentos.
    * 
    * @param nome : Nome da pessoa.
