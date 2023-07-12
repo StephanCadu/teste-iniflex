@@ -38,6 +38,10 @@ public class Funcionario extends Pessoa {
     return salario;
   }
 
+  public BigDecimal getSalariosMinimos() {
+    return this.getSalario().divide(BigDecimal.valueOf(1212));
+  }
+
   public void setSalario(BigDecimal salario) {
     this.salario = salario;
   }
@@ -52,7 +56,8 @@ public class Funcionario extends Pessoa {
 
   public String toString() {
     return "Nome: " + this.getNome() + ", Data Nascimento: "
-        + this.getDataNascimento().format(DateTimeFormatter.ofPattern("dd/mm/YYYY")) + ", Salário: "
-        + new DecimalFormat("#.###,00").format(this.getSalario()) + ", Função: " + this.getFuncao();
+        + this.getDataNascimento().format(DateTimeFormatter.ofPattern("dd/MM/YYYY")) + ", Salário: "
+        + new DecimalFormat("#,##0.00").format(this.getSalario()) + ", Função: " + this.getFuncao();
   }
+
 }
